@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import pf from "petfinder-client";
-// import Pet from "./Pet";
+import Pet from "./Pet";
 
 const petfinder = pf({
   key: process.env.API_KEY,
@@ -42,10 +42,16 @@ class App extends React.Component {
     return (
       <div>
         <h1>Adopt Me!</h1>
-        <pre>
-        // dump all the state to the page, i.e. see all the data from the API
-          <code>{JSON.stringify(this.state, null, 4)}</code>
-        </pre>
+        {this.state.pets.map(pet => {
+            let breed;
+
+            if (Array.isArray(pet.breeds.breed)) {
+              breed = pet.breeds.breed.join(', ')
+            } else {
+              breed = pet.breeds.breed
+            }
+            return <Pet animal={pet.animal} name={pet.name} breed={breed} />
+        })}
       </div>
     );
   }
