@@ -50,7 +50,7 @@ class App extends React.Component {
             } else {
               breed = pet.breeds.breed
             }
-            return <Pet key={pet.id} animal={pet.animal} name={pet.name} breed={breed} />
+            return <Pet key={pet.id} animal={pet.animal} name={pet.name} breed={breed} media={pet.media} location={`${pet.contact.city}, ${pet.contact.state}`} />
         })}
       </div>
     );
