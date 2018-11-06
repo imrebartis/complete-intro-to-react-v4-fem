@@ -1,4 +1,5 @@
-import React from 'React';
+import React from 'react';
+import {ANIMALS} from 'petfinder-client';
 
 class SearchParams extends React.Component {
   state = {
@@ -9,6 +10,11 @@ class SearchParams extends React.Component {
   handleLocationChange = event => {
     this.setState({
       location: event.target.value
+    })
+  };
+  handleAnimalChange = event => {
+    this.setState({
+      animal: event.target.value
     })
   }
 
@@ -23,6 +29,22 @@ class SearchParams extends React.Component {
             value={this.state.location}
             placeholder="location"
           />
+        </label>
+        <label htmlFor="animal">
+          Animal
+          <select
+            id="animal"
+            value={this.state.animal}
+            onChange={this.handleAnimalChange}
+            onBlur={this.handleAnimalChange}
+            >
+              <option/>
+              {
+                ANIMALS.map(animal => (
+                  <option key={animal} value={animal}>{animal}</option>
+                ))
+              }
+            </select>
         </label>
       </div>
     )
