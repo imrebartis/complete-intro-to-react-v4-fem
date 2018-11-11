@@ -38,6 +38,7 @@ class Results extends React.Component {
       })
   }
   render() {
+    throw new Error("hello error my old friend")
     return (
       <div className="search">
         <SearchBox />
