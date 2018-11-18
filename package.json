@@ -5,6 +5,7 @@
   "main": "src/App.js",
   "scripts": {
     "test": "jest --silent",
+    "test:watch": "jest --silent --watch",
     "test-update": "jest --silent -u",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
