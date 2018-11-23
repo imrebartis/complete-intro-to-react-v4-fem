@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "@reach/router";
-import styled from "react-emotion";
+import styled, {injectGlobal} from "react-emotion";
 import colors from './colors';
+
+injectGlobal `
+  body {
+    background: #bada55;
+  }
+`
 
 const Container = styled("header")`
   background-color: ${colors.dark};
