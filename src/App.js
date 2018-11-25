@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Router } from "@reach/router";
 import pf from "petfinder-client";
+import Loadable from "react-loadable";
 import Results from "./Results";
-import Details from "./Details";
 import SearchParams from "./SearchParams";
 import NavBar from "./NavBar";
 import { Provider } from "./SearchContext";
@@ -12,6 +12,13 @@ const petfinder = pf({
   key: process.env.API_KEY,
   secret: process.env.API_SECRET
 });
+
+const LoadableDetails = Loadable({
+  loader: () => import('./Details'),
+  loading() {
+    return <h1>loading split out code ...</h1>
+  }
+})
 
 class App extends React.Component {
   constructor(props) {
@@ -77,7 +84,7 @@ class App extends React.Component {
         <Provider value={this.state}>
           <Router>
             <Results path="/" />
-            <Details path="/details/:id" />
+            <LoadableDetails path="/details/:id" />
             <SearchParams path="/search-params" />
           </Router>
         </Provider>
