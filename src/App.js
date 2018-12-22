@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { Router, Link } from "@reach/router";
 import Results from "./Results";
 import Details from "./Details";
@@ -31,4 +30,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+export default App;
