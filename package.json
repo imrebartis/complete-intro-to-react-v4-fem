@@ -12,7 +12,7 @@
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "dev": "parcel src/index.html",
     "build": "parcel build --public-url ./dist/ src/index.html",
-    "start": "npm run build && babel-node server/index.js"
+    "start": "npm run build && babel-node server.js"
   },
   "repository": {
     "type": "git",
