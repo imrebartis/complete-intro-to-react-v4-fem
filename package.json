@@ -9,7 +9,7 @@
     "test:coverage": "jest --silent --coverage",
     "test-update": "jest --silent -u",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
+    "lint": "tslint --project .",
     "dev": "parcel src/index.html",
     "build": "parcel build --public-url ./dist/ src/index.html",
     "start": "npm run build && babel-node server.js"
